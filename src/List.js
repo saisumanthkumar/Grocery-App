@@ -4,11 +4,10 @@ import React from 'react';
 import {FaTrash,FaEdit} from 'react-icons/fa';
 
 function List({items,remove,editItem}) {
-    const status = false
-
     return (
         <div className="output">
-            {status && <h1>hello</h1> }
+            { ((Object.keys(items).length === 0)?true:false) && <div className="zero"><p>No items in your <em>Grocery List</em> <br />Add items</p></div> }
+
             {
                 items.map((item) =>
                 {

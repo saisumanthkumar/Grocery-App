@@ -67,10 +67,9 @@ function App() {
   useEffect(() => {
     localStorage.setItem('list',JSON.stringify(items))
   }, [items])
-
   
   function download() {
-    const text = "     GROCERY LIST \n**********************\n" + items.map((item,index) => `${index + 1}. ${item.title}`).join('\n') + "\n**********************\n"
+    const text = "     GROCERY LIST \n**********************\n\n" + items.map((item,index) => `${index + 1}. ${item.title}`).join('\n') + "\n\n**********************\n"
     const element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
     element.setAttribute('download', 'Grocery_Items.txt');
